@@ -1,5 +1,5 @@
 {
-  "name": "Download CSV from in SPS",
+  "name": "Download CSV in SPS",
   "description": "Download CSV from in SPS ",
   "main": "Main.xaml",
   "dependencies": {
@@ -12,7 +12,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.2.0.0",
-  "projectVersion": "1.0.8",
+  "projectVersion": "1.0.9",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
