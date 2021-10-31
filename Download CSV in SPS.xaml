@@ -79,7 +79,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Download_Target_report_daily" sap:VirtualizedContainerService.HintSize="624,3235.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_Target_report_daily" sap:VirtualizedContainerService.HintSize="624,2667.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intConfigMaxPagesEachdDownload" />
       <Variable x:TypeArguments="x:String" Name="strNameSavedSearch" />
@@ -92,45 +92,53 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="MaxPagesDownloadingCSV" DisplayName="Get Asset MaxPagesDownloadingCSV" sap:VirtualizedContainerService.HintSize="582.4,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
-      <ui:GetRobotAsset.Value>
-        <OutArgument x:TypeArguments="x:Int32">[intConfigMaxPagesEachdDownload]</OutArgument>
-      </ui:GetRobotAsset.Value>
-    </ui:GetRobotAsset>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="NameSavedSearch_downloadCSV" DisplayName="Get Asset NameSavedSearch_downloadCSV" sap:VirtualizedContainerService.HintSize="582.4,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
-      <ui:GetRobotAsset.Value>
-        <OutArgument x:TypeArguments="x:String">[strNameSavedSearch]</OutArgument>
-      </ui:GetRobotAsset.Value>
-    </ui:GetRobotAsset>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="582.4,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-      <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[strFolderScreenshot]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">W:\OM Files\SPS\CSV\Screenshot</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[strUrlSPSshipmentList]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">["https://commerce.spscommerce.com/fulfillment/transactions/list/"]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-        </scg:List>
-      </ui:MultipleAssign.AssignOperations>
-    </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: Fulfillment : SPS Commerce" sap:VirtualizedContainerService.HintSize="582.4,2612" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a47bff08-7f36-483a-ad43-0f9628377623" Version="V1" WindowResize="Maximize">
+    <Sequence DisplayName="InitalVariablesForThisJob" sap:VirtualizedContainerService.HintSize="582.4,22.4" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="MaxPagesDownloadingCSV" DisplayName="Get Asset MaxPagesDownloadingCSV" sap:VirtualizedContainerService.HintSize="443.2,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:Int32">[intConfigMaxPagesEachdDownload]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="NameSavedSearch_downloadCSV" DisplayName="Get Asset NameSavedSearch_downloadCSV" sap:VirtualizedContainerService.HintSize="443.2,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[strNameSavedSearch]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="443.2,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[strFolderScreenshot]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">W:\OM Files\SPS\CSV\Screenshot</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[strUrlSPSshipmentList]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">["https://commerce.spscommerce.com/fulfillment/transactions/list/"]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+    </Sequence>
+    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Chrome: Fulfillment : SPS" sap:VirtualizedContainerService.HintSize="582.4,2512" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a47bff08-7f36-483a-ad43-0f9628377623" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="In Saved Search page" sap:VirtualizedContainerService.HintSize="548.8,2395.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="In Saved Search page" sap:VirtualizedContainerService.HintSize="548.8,2295.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strMaxPage" />
               <Variable x:TypeArguments="x:Int32" Name="intMaxPage" />
@@ -145,7 +153,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <uix:NNavigateBrowser Action="Refresh" DelayAfter="5" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="507.2,82.4" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V1" />
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Saved Search'" sap:VirtualizedContainerService.HintSize="507.2,22.4" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="10">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Saved Search'" sap:VirtualizedContainerService.HintSize="507.2,22.4" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="a47bff08-7f36-483a-ad43-0f9628377623" Timeout="10">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="249.6,85.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
@@ -241,7 +249,7 @@
                       <OutArgument x:TypeArguments="x:Int32">[intCurrentPage]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">0</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -249,7 +257,7 @@
                       <OutArgument x:TypeArguments="x:Int32">[intCurrentLoop]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">0</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -263,23 +271,43 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:InterruptibleDoWhile DisplayName="LoopAccordingToMaxPagesEachDownload" sap:VirtualizedContainerService.HintSize="507.2,1226.4" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+            <ui:InterruptibleDoWhile DisplayName="LoopAccordingToMaxPagesEachDownload" sap:VirtualizedContainerService.HintSize="507.2,1126.4" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="DownloadMaxPages" sap:VirtualizedContainerService.HintSize="472,1059.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="DownloadMaxPages" sap:VirtualizedContainerService.HintSize="472,959.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="AssignintCurrentMaxPage" sap:VirtualizedContainerService.HintSize="430.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[intCurrentMaxPage]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[intConfigMaxPagesEachdDownload]</InArgument>
-                    </Assign.Value>
-                  </Assign>
+                  <ui:MultipleAssign DisplayName="initialVariablesForLoop" sap:VirtualizedContainerService.HintSize="430.4,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[intCurrentLoop]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[intCurrentLoop+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[intCurrentMaxPage]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[intConfigMaxPagesEachdDownload]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MultipleAssign>
                   <ui:InterruptibleDoWhile DisplayName="loopToSelectRecordsInEachPages" sap:VirtualizedContainerService.HintSize="430.4,507.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                     <ui:InterruptibleDoWhile.Body>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,340" sap2010:WorkflowViewState.IdRef="Sequence_16">
@@ -289,6 +317,14 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="increaseCurrentPage" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[intCurrentPage]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[intCurrentPage+1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
                         <If Condition="[intCurrentPage=1]" DisplayName="switchPage" sap:VirtualizedContainerService.HintSize="262.4,22.4" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -380,18 +416,10 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
-                        <Assign DisplayName="increaseCurrentPage" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Int32">[intCurrentPage]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Int32">[intCurrentPage+1]</InArgument>
-                          </Assign.Value>
-                        </Assign>
                       </Sequence>
                     </ui:InterruptibleDoWhile.Body>
                     <ui:InterruptibleDoWhile.Condition>
-                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intCurrentPage&lt;=intMaxPage and intCurrentPage&lt;=intCurrentMaxPage" />
+                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intCurrentPage&lt;intMaxPage and intCurrentPage&lt;intCurrentMaxPage" />
                     </ui:InterruptibleDoWhile.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -472,7 +500,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NCheckState>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Combine documents'" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Combine documents'" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a47bff08-7f36-483a-ad43-0f9628377623">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://cdn.prod.spsc.io/web/fulfillment/ui/fulfillment-ui-v2/64402aa3d6476c2b8a15af6d88590c6c9758f84b/index.html?access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1qaEJORVF3TkRaQk56ZENORFV3TmpjeVJUSkZOMFU1TTBZMk5EYzRPVFUyUVRjMlFUSkVOZyJ9.eyJodHRwOi8vc3BzL2VudiI6InByb2QiLCJodHRwOi8vc3BzL2lzLXRyaWFsIjpmYWxzZSwiaHR0cDovL3Nwcy9vcmctaWQiOiIxOTI4MTg3NjU3MTcwNzk4MDE5ODI4NTkwNDYzMzQ4NTkxMjc1MCIsImh0dHA6Ly9zcHMvb3JnLW5hbWUiOiJFdGVrY2l0eSBDb3Jwb3JhdGlvbiIsImh0dHA6Ly9zcHMvb3duZXItb3JnLWlkIjoiMTU3NjI3MTQxOTc5NjEyOTE1NjI2MzMzNTc3MTA1MTExODU0MjMyIiwiaHR0cDovL3Nwcy90ZXN0Ijoibm8iLCJpc3MiOiJodHRwczovL2F1dGguc3BzY29tbWVyY2UuY29tLyIsInN1YiI6ImF1dGgwfDIyNTY5NDU4NTI3MjQwNTk0NTA4OTI0MjMzNjU5NDA2Nzc5MTA0NyIsImF1ZCI6WyJhcGk6Ly9hcGkuc3BzY29tbWVyY2UuY29tLyIsImh0dHBzOi8vc3BzY29tbWVyY2UuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTYxNTMxMzM2NCwiZXhwIjoxNjE1MzU2NTY0LCJhenAiOiJYZ1ZpWmV2VE1ORklpb1VsZjhWeUNXQURpc2oxYzZ4TiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.Z2iCeHpQiPhsxmkE_QJ2RCswK9-memFhEMj8YJqPe2qC48JLsteMxQG2YZr9vMW8hCTsqqAWmL_h0nxPpmYVf1g3GDu6K8ptaq_nSo2zJ-P0M9CrxIRWM9MxSiwQcY-geqFNvPn3D3msu8EVxWP3rPeJgWyCWCxJl_weNJghI9kBCyBoGYZy1HXkJaCy2Golo6SRGbhuMVO6nYEgsOYJDVdM16e7YbfhGOCHVaerziOFswNa8B2K_PkFSfB3lmuxxrmzbOeL3giybkfaUfSlNuFrNJdqktC5fh3PZU0PfY7N4yPe3TpKI6HiaGY3174tqDGVPZzvqPfT1s0qVf97qw&amp;lang=en-US#/transactions/list/" DesignTimeRectangle="510, 375, 235, 19" ElementType="Text" FriendlyName="'Combine documents'" FullSelectorArgument="&lt;webctrl src='https://cdn.prod.spsc.io/web/fulfillment/ui/fulfillment-ui-v2/64*' tag='IFRAME' /&gt;&lt;webctrl aaname='Combine documents into one CSV file' parentid='fulfillment' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl src='https://cdn.prod.spsc.io/web/fulfillment/ui/fulfillment-ui-v2/64*' tag='IFRAME' /&gt;&lt;webctrl aaname='Combine documents into one CSV file' parentid='fulfillment' tag='SPAN' type='' check:text='Combine documents into one CSV file' /&gt;" Guid="c479f4f7-ae06-4e84-a16b-5902615e8951" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO8AAAAXCAYAAADjsRjNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAULSURBVHhe7ZixahRRFIZ9JgvxHQTxCQKJtSCWgpaClqKlaKlWakoVVEyngnkA05l0KVOOfOv+679/7szuZtnoyPlgmJl7zz3nP+fes7vJha4oilFSzVsUI6WatyhGSjVvUYyUat6iGCnVvEUxUqp5i2Kk/PXmffVmt7t95253cnIyHZnny9dv3ZWr17ofBwfTkc1BrK3t693x8fF0pKAW1IR9KtaD83Xx0uXJ9eHjp7m6nuXsnWpemohmUpBNH+ZFzct8Ne/fg7pT//+5eb2puDzX7AedRdWFtY7ss14al33Wde3mbW0UToeaa12ItUn/q3CWAo4FcqLO55Ebe5qH91/l4aPHc3vuTdZqRD8jrOVy6KGt7Z3J3cH+xs1bp8bF2s3bErNpqnnPBw4Nh+c8cuMMjaF5+xpNLNNweXb7zvNGm3eRc0EQ/4nBu5CPt+/eT77BmfdPKa3xjVWy9+4/mM37B0gmhb0OR8sefG6oIIwz737S3n3pJ5Pj9dC8f3qLvjy4tJ4x1mftROrFXsif61VdXCOX/A75E7JRLtzJ7fPe3mydDqvy1rj7TA3y1yJ1KQ9gjjPGetnkvqQOX++oZn3IT5+NtHhsbLOOrXxadeWdceE1a529WfMygRBfnODMnXDnXQIkqLWZfSJ12DSvNb7pLXvNp4a05116HGn1jeE5Y6Uvzz/fuT95+myWgzRB6sq8ufOetVOefe9aL3+az7rwnvtLvp7/8xcv5+aBd3SnTq3TvOICc/7OmqyTa3PSn/LMeF5L5lQ3vcseUo/oG3cUz/fGcR/YZjOLnJNfr6vnhJ3/KuCe+7dS82ZRAOFKKgUB874mRfl64WOZVNpz5x07fxaM8a2ueCL9go/JF/Ec1aBvHlo6Ml7mwXhuvNeb9W4PjGl+qC7Q2l/Wps8Ee9/TzAPw43VovUunSL2i5d/PTOoBnuWrlSdjnIGMlTqHUFz/gATPw3UkrPf9zTwy75Y2xjzvpX82Iwhh6dCDpiDA3jcO/4ua131mUmkvXdgpPgX2yz/1xaK4rVxA6w6Pjprz4JqE+4aMz/hQ82KfeXH5vPtLDfjNQw3My1crl6xD5gFoIL7wd+nweWj5gcwDXEPqAZ61hmevj670CcRS/ZYF//krQnXNOjjML9u8qlkrD9nDSv+was17sVuFzQIh/jy/eftIv+Bj8kU8RzXom4eWjoyXeTA+1Lysd/tkqC7gh6xF7ovA3vc08wA0eh1a78pDpF7R8u/aUg/wLF+L8nT6ch4i46vO/A+g9QtPsG7Z5oWsYYu55sUxnyq+yJ3yPPS3SwoCfPnGsSabd8inx4fc9DykzLs9/Dw8nD79QVqVq/xkLH8nhmtN7dixieAHVrHSt+fB+FDzyof0AmNan/6yLvjNg+p/48q/7EWOc/c8AI2uy3VD1o2777GjePKnPLIOvpZn5Z72wJjrdbDzfLSe+FyuGxjL/H+P7TR/mgvsV2le3jN2nuO55gU51dd0CsVp39d4CgIS80IiJpuXpCmYfDImMinmtFGgYnvM1Oj2DhooEDbc+S95fmoTT36ymJDzr3d3J7Hct2rivjMPxoeaF5Sr4nEp72Xqgi/p/L6/P2le94WPJPeUe54J/Ppaz136WeexXFeimLL1GqQe4Dn3WLnqauUmmOuzTd2ZOyhf15mwZqh59e4+vI6t2KeatyiKcVDNWxQjpZq3KEZKNW9RjJRq3qIYJV33C8wGrsaCCf2NAAAAAElFTkSuQmCC" InformativeScreenshot="157496bfffe470855ebceb9b55f23c2c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='sps-commerce-platform' title='Fulfillment : SPS Commerce' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                           <uix:TargetAnchorable.Anchors>
@@ -489,7 +517,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Download'" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Download'" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a47bff08-7f36-483a-ad43-0f9628377623">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://cdn.prod.spsc.io/web/fulfillment/ui/fulfillment-ui-v2/64402aa3d6476c2b8a15af6d88590c6c9758f84b/index.html?access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1qaEJORVF3TkRaQk56ZENORFV3TmpjeVJUSkZOMFU1TTBZMk5EYzRPVFUyUVRjMlFUSkVOZyJ9.eyJodHRwOi8vc3BzL2VudiI6InByb2QiLCJodHRwOi8vc3BzL2lzLXRyaWFsIjpmYWxzZSwiaHR0cDovL3Nwcy9vcmctaWQiOiIxOTI4MTg3NjU3MTcwNzk4MDE5ODI4NTkwNDYzMzQ4NTkxMjc1MCIsImh0dHA6Ly9zcHMvb3JnLW5hbWUiOiJFdGVrY2l0eSBDb3Jwb3JhdGlvbiIsImh0dHA6Ly9zcHMvb3duZXItb3JnLWlkIjoiMTU3NjI3MTQxOTc5NjEyOTE1NjI2MzMzNTc3MTA1MTExODU0MjMyIiwiaHR0cDovL3Nwcy90ZXN0Ijoibm8iLCJpc3MiOiJodHRwczovL2F1dGguc3BzY29tbWVyY2UuY29tLyIsInN1YiI6ImF1dGgwfDIyNTY5NDU4NTI3MjQwNTk0NTA4OTI0MjMzNjU5NDA2Nzc5MTA0NyIsImF1ZCI6WyJhcGk6Ly9hcGkuc3BzY29tbWVyY2UuY29tLyIsImh0dHBzOi8vc3BzY29tbWVyY2UuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTYxNTMxMzM2NCwiZXhwIjoxNjE1MzU2NTY0LCJhenAiOiJYZ1ZpWmV2VE1ORklpb1VsZjhWeUNXQURpc2oxYzZ4TiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.Z2iCeHpQiPhsxmkE_QJ2RCswK9-memFhEMj8YJqPe2qC48JLsteMxQG2YZr9vMW8hCTsqqAWmL_h0nxPpmYVf1g3GDu6K8ptaq_nSo2zJ-P0M9CrxIRWM9MxSiwQcY-geqFNvPn3D3msu8EVxWP3rPeJgWyCWCxJl_weNJghI9kBCyBoGYZy1HXkJaCy2Golo6SRGbhuMVO6nYEgsOYJDVdM16e7YbfhGOCHVaerziOFswNa8B2K_PkFSfB3lmuxxrmzbOeL3giybkfaUfSlNuFrNJdqktC5fh3PZU0PfY7N4yPe3TpKI6HiaGY3174tqDGVPZzvqPfT1s0qVf97qw&amp;lang=en-US#/transactions/list/" DesignTimeRectangle="1257, 443, 71, 20" ElementType="Text" FriendlyName="'Download'" FullSelectorArgument="&lt;webctrl src='https://cdn.prod.spsc.io/web/fulfillment/ui/fulfillment-ui-v2/64*' tag='IFRAME' /&gt;&lt;webctrl aaname='Download' parentid='fulfillment' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl src='https://cdn.prod.spsc.io/web/fulfillment/ui/fulfillment-ui-v2/64*' tag='IFRAME' /&gt;&lt;webctrl aaname='Download' parentid='fulfillment' tag='SPAN' type='' check:text='Download' /&gt;" Guid="1506cb64-a930-4150-af68-97d624df38e4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAYCAYAAACyVACzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHvSURBVFhH7ZOxSgRBEET9OnPD+xFDIxMzI39AEwUNTQwuEBQEBVEQBUVERMEDFVTwgpW3UEttM6c7i3IXTENx9mx1TXXtOje/MKgKuqGElYESVgZKWBkoYWWghJWBElYGSlgZaIW1uzesYr1/fFYrq2utoWlB/k5Oz5LP/wrsy97Po1G1uLTcnCfDkhmIDFA8c+40MNNhAQ3Owhc282EBesq/LgmqXFg6t3f3DZ+/KWlEQ9xBv7653dL1Oyf5kzb1NR5XG1s7zTP/71C5L8E14PcOK55jBlMSi4vLYOxTGur5pdBBTzPqUz7E8YBY2ntm5MPvkYZmKLiaoXwO9AorGgIyoQudA1j64fGpMSBN8eN81KCPPmIP4DLDrM4cerF6Lr4HE1++ZrPDYhgRf+POkQn1/AL4h0fHzRw81+gTVmpGi0Z/aHnFlybfrtErLDfVNSx/w4LOhvsHtYab+a+wdKf6GET07RrZYcXLOYtLgGhcob68vtXguc6urm9qPb8ntfhvYaX8KhwtHzViEOJ7ML3C0nKULxEvmCSOUZXmU2egT1jy55w4E3XVy2tKI3I4A8mwvPyLciggVRQG0nON1BnoEpYWoxSYeCrnxxnq/OKy7t1v5KCNpnNAK6yCn1HCykAJKwMlrAyUsDpjUH0DS6xaMbQJgKQAAAAASUVORK5CYII=" InformativeScreenshot="d65539f7024a59ad990c3c9228bc216b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='sps-commerce-platform' title='Fulfillment : SPS Commerce' /&gt;" SearchSteps="FuzzySelector, Image">
                           <uix:TargetAnchorable.Anchors>
@@ -612,38 +640,10 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <ui:MultipleAssign DisplayName="MultipleAssignForNextLoop" sap:VirtualizedContainerService.HintSize="430.4,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-                    <ui:MultipleAssign.AssignOperations>
-                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:Int32">[intCurrentPage]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:Int32">[intCurrentPage+1]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:Int32">[intCurrentLoop]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:Int32">[intCurrentLoop+1]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                      </scg:List>
-                    </ui:MultipleAssign.AssignOperations>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:MultipleAssign>
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
               <ui:InterruptibleDoWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intCurrentLoop&lt;=intMaxLoopCount and intCurrentPage&lt;=intMaxPage" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intCurrentLoop&lt;intMaxLoopCount and intCurrentPage&lt;intMaxPage" />
               </ui:InterruptibleDoWhile.Condition>
             </ui:InterruptibleDoWhile>
             <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="507.2,22.4" sap2010:WorkflowViewState.IdRef="CommentOut_1">
@@ -672,7 +672,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'A'" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="1">
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'A'" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a47bff08-7f36-483a-ad43-0f9628377623" Timeout="1">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="375.2,252" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
