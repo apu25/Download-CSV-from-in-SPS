@@ -233,7 +233,7 @@
                 <OutArgument x:TypeArguments="x:String">[strMaxPage]</OutArgument>
               </uix:NGetText.Text>
             </uix:NGetText>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="507.2,194.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="InitialVariablesForAllLoop" sap:VirtualizedContainerService.HintSize="507.2,194.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
